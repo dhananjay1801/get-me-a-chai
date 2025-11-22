@@ -45,15 +45,18 @@ export const initiate = async (amount, toUser, paymentForm) => {
 export const fetchUser = async (username) => {
     await connectDb()
     let u = await User.findOne({ username: username })
+    if (!u) return null
     let user = u.toObject({ flattenObjectIds: true })
-    return user
+    // Convert to plain object for client component compatibility
+    return JSON.parse(JSON.stringify(user))
 }
 
 export const fetchPayments = async (username) => {
     await connectDb()
     // find top 4 payments by decreasing order of amount and flatten the object ids
     let p = await Payment.find({ toUser: username, done: true }).sort({ amount: -1 }).limit(4).lean()
-    return p
+    // Convert to plain objects for client component compatibility
+    return JSON.parse(JSON.stringify(p))
 }
 
 export const updateProfile = async (data, oldUsername) => {

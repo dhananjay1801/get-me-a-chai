@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Get Me A Chai
+
+A modern crowdfunding platform for creators, artists, developers, and content makers. Get Me A Chai enables fans and followers to support creators directly through secure payment processing.
+
+## Features
+
+- **Custom User Profiles**: Create unique profiles with custom usernames, profile pictures, and cover images
+- **Secure Payment Processing**: Integrated with Razorpay for seamless and secure payment transactions
+- **Supporter Leaderboard**: Display top supporters with a leaderboard showing all contributions
+- **Personal Messages**: Supporters can leave personal messages with their contributions
+- **OAuth Authentication**: Sign in with Google or GitHub
+- **Responsive Design**: Fully responsive design optimized for mobile, tablet, and desktop devices
+- **Real-time Payment Verification**: Secure payment verification and status updates
+
+## Tech Stack
+
+### Frontend
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **React Toastify** - Toast notifications
+
+### Backend
+- **Next.js API Routes** - Server-side API endpoints
+- **MongoDB** - Database (via Mongoose)
+- **NextAuth.js** - Authentication (Google & GitHub OAuth)
+- **Razorpay** - Payment gateway integration
+
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd get-me-a-chai
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root directory and add the following variables:
+
+```env
+# MongoDB
+MONGODB_URI=your_mongodb_connection_string
+
+# Google OAuth
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+# GitHub OAuth
+GITHUB_ID=your_github_client_id
+GITHUB_SECRET=your_github_client_secret
+
+# Application URL
+NEXT_PUBLIC_URL=http://localhost:3000
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Setting Up Razorpay
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a Razorpay account at [razorpay.com](https://razorpay.com)
+2. Get your API keys from the Razorpay Dashboard
+3. Users need to add their Razorpay credentials in the dashboard to receive payments
 
-## Learn More
+## Setting Up OAuth
 
-To learn more about Next.js, take a look at the following resources:
+### Google OAuth
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+2. Create a new project or select an existing one
+3. Enable Google+ API
+4. Create OAuth 2.0 credentials
+5. Add authorized redirect URI: `http://localhost:3000/api/auth/callback/google`
+6. Copy Client ID and Client Secret to `.env`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### GitHub OAuth
+1. Go to GitHub Settings > Developer settings > OAuth Apps
+2. Create a new OAuth App
+3. Set Authorization callback URL: `http://localhost:3000/api/auth/callback/github`
+4. Copy Client ID and Client Secret to `.env`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+### For Creators
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Sign Up**: Sign in with Google (not yet integrated) or GitHub
+2. **Configure Profile**: Go to Dashboard and add:
+   - Your name and profile details
+   - Profile picture URL
+   - Cover picture URL
+   - Razorpay Key ID and Secret (to receive payments)
+3. **Share Your Link**: Share your profile link (`/your-username`) with your audience
+4. **Receive Support**: Your supporters can now contribute to your work
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### For Supporters
+
+1. Visit a creator's profile page
+2. Enter your name and a message
+3. Choose an amount or enter a custom amount
+4. Complete the payment via Razorpay
+5. Your contribution will appear on the creator's supporter leaderboard
+
+
+## Contributing
+
+Contributions are welcomed....
