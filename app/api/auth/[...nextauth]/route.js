@@ -22,13 +22,13 @@ const authOptions = NextAuth({
     ],
     callbacks: {
         async signIn({ user, account, profile, email }) {
-            if (account.provider === 'github') {
+            if (account.provider === 'github' || account.provider === 'google') {
                 await connectDb()
 
                 const userEmail = user?.email || profile?.email || email
                 if (!userEmail) {
-                    console.error("GitHub OAuth did not return an email. Ensure your GitHub account has a public or verified email.")
-                    return '/login?error=NoGithubEmail'
+                    console.error(`${account.provider} OAuth did not return an email. Ensure your ${account.provider} account has a public or verified email.`)
+                    return `/login?error=No${account.provider}Email`;
                 }
 
                 const currentUser = await User.findOne({ email: userEmail })

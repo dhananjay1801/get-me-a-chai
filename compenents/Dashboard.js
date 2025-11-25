@@ -11,25 +11,34 @@ const Dashboard = () => {
     const { data: session, update } = useSession()
     const router = useRouter()
     const [form, setform] = useState({});
+    const [isDirty, setIsDirty] = useState(false)
 
     useEffect(() => {
-        getData()
         if (!session) {
             router.push('/login');
+            return
         }
-    }, [session, router]);
+        if (isDirty) {
+            return;
+        }
+        getData();
+    }, [session, router, isDirty]);
 
     const getData = async () => {
+        if (!session?.user?.name) return;
         let u = await fetchUser(session.user.name)
         setform(u)
     }
 
     const handleChange = (e) => {
+        setIsDirty(true)
         setform({ ...form, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (data) => {
-        let a = updateProfile(data, session.user.name)
+    const handleSubmit = async (data) => {
+        let a = await updateProfile(data, session.user.name)
+        setIsDirty(false);
+
         toast('Profile Updated', {
             position: "top-right",
             autoClose: 5000,
@@ -82,13 +91,13 @@ const Dashboard = () => {
                     {/* input for profile picture of input type text */}
                     <div className="my-2">
                         <label htmlFor="profilePic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Picture URL</label>
-                        <input value={form.profilePic ? form.profilePic : ""} onChange={handleChange} type="text" name='profilePic' id="profilePic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        <input value={form.profilePic ? form.profilePic : ""} onChange={handleChange} type="text" name='profilePic' id="profilePic" placeholder='Default: profile.png' className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                     </div>
 
                     {/* input for cover pic  */}
                     <div className="my-2">
                         <label htmlFor="coverPic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cover Picture URL</label>
-                        <input value={form.coverPic ? form.coverPic : ""} onChange={handleChange} type="text" name='coverPic' id="coverPic" className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        <input value={form.coverPic ? form.coverPic : ""} onChange={handleChange} type="text" name='coverPic' id="coverPic" placeholder='Default: cover.png' className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                     </div>
                     {/* input razorpay id */}
                     <div className="my-2">

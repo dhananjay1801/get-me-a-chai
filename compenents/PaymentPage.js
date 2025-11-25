@@ -101,7 +101,7 @@ const PaymentPage = ({ username }) => {
             <div className='cover w-full relative'>
                 <img src={currentUser.coverPic} alt="cover" className=' w-full h-[300px]' />
 
-                <div className='absolute -bottom-20 right-[45%] border-white border-2 rounded-xl size-32 overflow-hidden'>
+                <div className='absolute -bottom-20 right-[45.5%] border-white border-2 rounded-xl size-32 overflow-hidden'>
                     <img src={currentUser.profilePic} alt="profile" width={128} height={128} className='rounded-xl size-32' />
                 </div>
             </div>
@@ -111,7 +111,7 @@ const PaymentPage = ({ username }) => {
                     @{username}
                 </div>
                 <div className='text-slate-400'>
-                    Let's help {username} to get a chai!
+                    Let&apos;s help {username} to get a chai!
                 </div>
                 <div className='text-slate-400 mb-10'>
                     {currentUser.name} has raised ₹{payments.reduce((sum, p) => sum + p.amount, 0) / 100} via {payments.length} payments. 
