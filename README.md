@@ -8,7 +8,7 @@ A modern crowdfunding platform for creators, artists, developers, and content ma
 - **Secure Payment Processing**: Integrated with Razorpay for seamless and secure payment transactions
 - **Supporter Leaderboard**: Display top supporters with a leaderboard showing all contributions
 - **Personal Messages**: Supporters can leave personal messages with their contributions
-- **OAuth Authentication**: Sign in with Google (not yet integrated) or GitHub
+- **OAuth Authentication**: Sign in with Google or GitHub
 - **Responsive Design**: Fully responsive design optimized for mobile, tablet, and desktop devices
 - **Real-time Payment Verification**: Secure payment verification and status updates
 
@@ -96,7 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ### For Creators
 
-1. **Sign Up**: Sign in with Google (not yet integrated) or GitHub
+1. **Sign Up**: Sign in with Google or GitHub
 2. **Configure Profile**: Go to Dashboard and add:
    - Your name and profile details
    - Profile picture URL
