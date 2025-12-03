@@ -62,9 +62,9 @@ const Navbar = () => {
                                 <button 
                                     onClick={() => {
                                         setShowdropdown(false)
-                                        signOut()
+                                        signOut({ callbackUrl: '/' })
                                     }} 
-                                    className="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    className="cursor-pointer w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                     Sign out
                                 </button>
