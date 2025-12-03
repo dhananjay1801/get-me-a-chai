@@ -145,15 +145,15 @@ const PaymentPage = ({ username }) => {
 
                             <input onChange={handleChange} value={paymentForm.amount} name='amount' type="text" className='w-full p-3 rounded-lg bg-slate-800 text-sm sm:text-base' placeholder='Enter Amount' />
 
-                            <button onClick={() => pay(paymentForm.amount * 100)} type="button" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5 disabled:opacity-70 disabled:cursor-not-allowed" disabled={!paymentForm.name?.length || !paymentForm.message?.length}>
+                            <button onClick={() => pay(paymentForm.amount * 100)} type="button" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5 disabled:opacity-70 disabled:cursor-not-allowed" disabled={!paymentForm.name?.length || !paymentForm.message?.length}>
                                 Pay
                             </button>
                         </div>
                         {/* Or choose from these amounts */}
                         <div className="flex gap-2 mt-5 flex-wrap">
-                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px]" onClick={() => pay(1000)}>Pay ₹10</button>
-                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px]" onClick={() => pay(2000)}>Pay ₹20</button>
-                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px]" onClick={() => pay(3000)}>Pay ₹30</button>
+                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px] cursor-pointer" onClick={() => pay(1000)}>Pay ₹10</button>
+                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px] cursor-pointer" onClick={() => pay(2000)}>Pay ₹20</button>
+                            <button className="bg-slate-800 p-2 sm:p-3 rounded-lg flex-1 min-w-[90px] cursor-pointer" onClick={() => pay(3000)}>Pay ₹30</button>
                         </div>
                     </div>
                 </div>

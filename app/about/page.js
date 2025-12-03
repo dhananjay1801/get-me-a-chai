@@ -53,7 +53,7 @@ const About = () => {
       <div className="text-white container mx-auto pb-32 pt-14 text-center px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">Ready to Get Started?</h2>
         <Link href={'/login'}>
-          <button type="button" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
+          <button type="button" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
             Start Here
           </button>
         </Link>

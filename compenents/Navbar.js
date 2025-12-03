@@ -36,7 +36,7 @@ const Navbar = () => {
 
                     <div 
                         id="dropdown" 
-                        className={`z-10 ${showdropdown ? "" : "hidden"} absolute right-0 top-12 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+                        className={`z-10 ${showdropdown ? "" : "hidden"} cursor-pointer absolute right-0 top-12 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
                         onMouseDown={(e) => e.preventDefault()}
                     >
                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
@@ -76,7 +76,7 @@ const Navbar = () => {
 
                 {!session &&
                     <Link href={'/login'}>
-                        <button type="button" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2.5 text-center leading-5">
+                        <button type="button" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2.5 text-center leading-5">
                             Log In
                         </button>
                     </Link>

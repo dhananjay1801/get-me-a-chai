@@ -117,7 +117,7 @@ const Dashboard = () => {
 
                     {/* Submit Button  */}
                     <div className="my-6">
-                        <button type="submit" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5 w-full">Save</button>
+                        <button type="submit" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5 w-full">Save</button>
                     </div>
                 </form>
 

@@ -13,12 +13,12 @@ export default function Home() {
                 </p>
                 <div className="flex gap-2 flex-wrap justify-center">
                     <Link href={'/login'}>
-                        <button type="button" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
+                        <button type="button" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
                             Start Here
                         </button>
                     </Link>
                     <Link href={'/about'}>
-                        <button type="button" className="rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
+                        <button type="button" className="cursor-pointer rounded-lg text-white bg-linear-to-br from-purple-600 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm px-4 py-2.5 text-center leading-5">
                             Read More
                         </button>
                     </Link>
@@ -28,22 +28,22 @@ export default function Home() {
             <div className="bg-white h-1 opacity-10"></div>
 
             <div className="text-white container mx-auto pb-32 pt-14 px-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-14">Your fans can buy you a Chai</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-14">Your fans can fuel your next chai</h2>
                 <div className="flex flex-col md:flex-row gap-5 justify-around items-center">
                     <div className="item space-y-3 flex flex-col items-center justify-center max-w-[260px] text-center">
                         <img className="bg-slate-400 text-black rounded-full p-2" src="man.gif" alt="man" width={88} />
-                        <p className="font-bold ">Fans want to help</p>
-                        <p className="text-center">Your fans are available for you to support you</p>
+                        <p className="font-bold ">Fans have your back</p>
+                        <p className="text-center">They&apos;re here to support you and keep you creating.</p>
                     </div>
                     <div className="item space-y-3 flex flex-col items-center justify-center max-w-[260px] text-center">
                         <img className="bg-slate-400 text-black rounded-full p-2" src="coin.gif" alt="man" width={88} />
-                        <p className="font-bold ">Fans want to contribute</p>
-                        <p className="text-center">Your fans are willing to contribute financially</p>
+                        <p className="font-bold ">Fuel your work with chai</p>
+                        <p className="text-center">Every chai helps you spend more time creating.</p>
                     </div>
                     <div className="item space-y-3 flex flex-col items-center justify-center max-w-[260px] text-center">
                         <img className="bg-slate-400 text-black rounded-full p-2" src="group.gif" alt="man" width={88} />
-                        <p className="font-bold ">Your fans want to collaborate</p>
-                        <p className="text-center">Your fans are ready to collaborate with you</p>
+                        <p className="font-bold ">Create with your fans</p>
+                        <p className="text-center">They&apos;re excited to collaborate and be part of your journey.</p>
                     </div>
                 </div>
             </div>
