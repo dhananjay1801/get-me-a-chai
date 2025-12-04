@@ -58,7 +58,11 @@ GOOGLE_CLIENT_SECRET=your_google_client_secret
 GITHUB_ID=your_github_client_id
 GITHUB_SECRET=your_github_client_secret
 
-# Application URL
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+
+# Application URLs
 NEXT_PUBLIC_URL=http://localhost:3000
 ```
 
