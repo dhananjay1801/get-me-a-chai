@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Script from 'next/script'
-import { initiate, fetchUser, fetchPayments } from '@/actions/useractions'
+import { initiate, fetchUser, fetchPayments, fetchPaymentStats } from '@/actions/useractions'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from 'react-toastify'
@@ -12,6 +12,7 @@ const PaymentPage = ({ username }) => {
     const [paymentForm, setPaymentForm] = useState({})
     const [currentUser, setCurrentUser] = useState({})
     const [payments, setPayments] = useState([])
+    const [paymentStats, setPaymentStats] = useState({ totalAmount: 0, totalCount: 0 })
     const searchParams = useSearchParams()
     const router = useRouter()
 
@@ -47,6 +48,8 @@ const PaymentPage = ({ username }) => {
         setCurrentUser(u)
         let dbPayments = await fetchPayments(username)
         setPayments(dbPayments)
+        let stats = await fetchPaymentStats(username)
+        setPaymentStats(stats)
     }
 
     const pay = async (amount) => {
@@ -114,7 +117,7 @@ const PaymentPage = ({ username }) => {
                     Let&apos;s help {username} to get a chai!
                 </div>
                 <div className='text-slate-400 mb-10 text-sm sm:text-base'>
-                    {currentUser.name} has raised ₹{payments.reduce((sum, p) => sum + p.amount, 0) / 100} via {payments.length} payments. 
+                    {currentUser.name} has raised ₹{paymentStats.totalAmount / 100} via {paymentStats.totalCount} payments. 
                 </div>
 
                 <div className="payment flex flex-col lg:flex-row gap-3 w-full lg:w-[80%]">

@@ -59,6 +59,15 @@ export const fetchPayments = async (username) => {
     return JSON.parse(JSON.stringify(p))
 }
 
+export const fetchPaymentStats = async (username) => {
+    await connectDb()
+    // Get all payments to calculate total amount and count
+    let allPayments = await Payment.find({ toUser: username, done: true }).lean()
+    let totalAmount = allPayments.reduce((sum, p) => sum + p.amount, 0)
+    let totalCount = allPayments.length
+    return { totalAmount, totalCount }
+}
+
 export const updateProfile = async (data, oldUsername) => {
     await connectDb()
     let nData = Object.fromEntries(data)
